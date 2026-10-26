@@ -1,0 +1,481 @@
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:vioscan_flutter/providers/device_provider.dart';
+import 'package:vioscan_flutter/services/device_service.dart';
+import 'package:vioscan_flutter/models/screening_model.dart';
+
+class BluetoothPairScreen extends ConsumerStatefulWidget {
+  const BluetoothPairScreen({super.key});
+
+  @override
+  ConsumerState<BluetoothPairScreen> createState() =>
+      _BluetoothPairScreenState();
+}
+
+class _BluetoothPairScreenState
+    extends ConsumerState<BluetoothPairScreen> {
+  bool _isScanning = false;
+  bool _isConnecting = false;
+  bool _isStartingScan = false;
+
+  String _lastStatus = 'Waiting for connection';
+  String _progress = '';
+
+  DeviceInfo? _device;
+  ScreeningModel? _lastResult;
+
+  StreamSubscription<DeviceConnectionState>? _connSub;
+  StreamSubscription<ScanProgress>? _progressSub;
+  StreamSubscription<ScreeningModel>? _resultSub;
+
+  DeviceService get _service => ref.read(deviceServiceProvider);
+
+  bool get _connected {
+    final state = _service.currentState;
+
+    return state == DeviceConnectionState.connected ||
+        state == DeviceConnectionState.done ||
+        state == DeviceConnectionState.capturing ||
+        state == DeviceConnectionState.transferring;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    _connSub = _service.statusStream.listen((state) {
+      if (!mounted) return;
+
+      setState(() {
+        _isConnecting =
+            state == DeviceConnectionState.connecting;
+
+        _isStartingScan =
+            state == DeviceConnectionState.capturing ||
+            state == DeviceConnectionState.transferring;
+
+        switch (state) {
+          case DeviceConnectionState.connected:
+            _lastStatus = 'Connected — device ready';
+            _isStartingScan = false;
+            break;
+
+          case DeviceConnectionState.scanning:
+            _lastStatus = 'Searching paired Bluetooth devices...';
+            break;
+
+          case DeviceConnectionState.connecting:
+            _lastStatus = 'Connecting to BC-Care...';
+            break;
+
+          case DeviceConnectionState.capturing:
+            _lastStatus = 'Scanning lesion...';
+            break;
+
+          case DeviceConnectionState.transferring:
+            _lastStatus = 'Receiving result...';
+            break;
+
+          case DeviceConnectionState.done:
+            _lastStatus = 'Scan completed';
+            _isStartingScan = false;
+            break;
+
+          case DeviceConnectionState.error:
+            _lastStatus = 'Connection or scan error';
+            _isStartingScan = false;
+            break;
+
+          case DeviceConnectionState.disconnected:
+            _lastStatus = 'Disconnected';
+            _isStartingScan = false;
+            break;
+        }
+      });
+    });
+
+    _progressSub = _service.progressStream.listen((progress) {
+      if (!mounted) return;
+
+      setState(() {
+        _progress = '${progress.label} (${progress.percent}%)';
+      });
+    });
+
+    _resultSub = _service.resultStream.listen((result) {
+      if (!mounted) return;
+
+      setState(() {
+        _lastResult = result;
+        _isStartingScan = false;
+        _progress = 'Result received';
+        _lastStatus = 'Scan completed';
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _connSub?.cancel();
+    _progressSub?.cancel();
+    _resultSub?.cancel();
+
+    // DeviceService dikelola oleh provider aplikasi.
+    // Jangan memutus koneksi ketika halaman ditutup.
+    super.dispose();
+  }
+
+  Future<void> _startScan() async {
+    if (_isScanning || _isConnecting || _connected) return;
+
+    setState(() {
+      _isScanning = true;
+      _progress = 'Searching paired devices...';
+    });
+
+    try {
+      await _service.startScan();
+
+      if (!mounted) return;
+
+      final device = _service.foundDevice;
+
+      if (device == null) {
+        setState(() {
+          _progress = _service.lastErrorMessage ??
+              'No paired BC-Care device found.';
+        });
+        return;
+      }
+
+      setState(() {
+        _device = device;
+        _progress = 'Found ${device.name}';
+      });
+
+      await _service.connect(device);
+
+      if (!mounted) return;
+
+      if (_service.currentState == DeviceConnectionState.connected) {
+        setState(() {
+          _lastStatus = 'Connected — device ready';
+          _progress = 'Connected. Device is on standby.';
+        });
+      } else {
+        setState(() {
+          _progress = _service.lastErrorMessage ??
+              'Connection failed.';
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _progress = 'Bluetooth error: $e';
+        });
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isScanning = false;
+        });
+      }
+    }
+  }
+
+  Future<void> _sendStartScanCommand() async {
+    if (!_connected) {
+      setState(() {
+        _progress = 'Connect to BC-Care first.';
+      });
+      return;
+    }
+
+    if (_isStartingScan) return;
+
+    setState(() {
+      _isStartingScan = true;
+      _progress = 'Sending START_SCAN...';
+      _lastResult = null;
+      _lastStatus = 'Starting scan...';
+    });
+
+    try {
+      await _service.sendStartScanCommand(mode: 'uv');
+
+      if (!mounted) return;
+
+      setState(() {
+        _progress = 'START_SCAN sent. Waiting for result...';
+      });
+    } catch (e) {
+      if (!mounted) return;
+
+      setState(() {
+        _isStartingScan = false;
+        _lastStatus = 'Scan command failed';
+        _progress = 'Failed to send START_SCAN: $e';
+      });
+    }
+  }
+
+  Future<void> _disconnect() async {
+    try {
+      await _service.disconnect();
+
+      if (!mounted) return;
+
+      setState(() {
+        _device = null;
+        _lastResult = null;
+        _progress = 'Disconnected from BC-Care.';
+        _lastStatus = 'Disconnected';
+        _isStartingScan = false;
+      });
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _progress = 'Disconnect error: $e';
+        });
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final connected = _connected;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Bluetooth Pairing'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () => context.go('/home'),
+        ),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.surface,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: Theme.of(context).colorScheme.outline,
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        connected
+                            ? Icons.bluetooth_connected
+                            : Icons.bluetooth,
+                        color: connected
+                            ? Colors.green
+                            : Theme.of(context).colorScheme.primary,
+                        size: 28,
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Text(
+                          _lastStatus,
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+
+                  if (_device != null)
+                    Text(
+                      '${_device!.name} (${_device!.id})',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+
+                  if (_progress.isNotEmpty) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      _progress,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                    ),
+                  ],
+
+                  const SizedBox(height: 12),
+
+                  LinearProgressIndicator(
+                    value: connected ? 1.0 : null,
+                    backgroundColor:
+                        Theme.of(context).colorScheme.surfaceVariant,
+                  ),
+
+                  if (_lastResult != null) ...[
+                    const SizedBox(height: 16),
+                    Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'Hasil Pemindaian',
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'Prediksi: ${_lastResult!.prediction}',
+                            ),
+                            Text(
+                              'Confidence: ${_lastResult!.confidence.toStringAsFixed(1)}%',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 24),
+
+            _buildActionButton(
+              icon: Icons.bluetooth_searching,
+              label: 'Scan & Connect to BC-Care Device',
+              onTap: connected || _isScanning || _isConnecting
+                  ? null
+                  : _startScan,
+              isLoading: _isScanning || _isConnecting,
+            ),
+
+            const SizedBox(height: 16),
+
+            // Tombol START_SCAN dibuat menonjol.
+            SizedBox(
+              width: double.infinity,
+              height: 58,
+              child: ElevatedButton.icon(
+                onPressed: !connected ||
+                        _isStartingScan ||
+                        _isScanning ||
+                        _isConnecting
+                    ? null
+                    : _sendStartScanCommand,
+                icon: _isStartingScan
+                    ? const SizedBox(
+                        width: 22,
+                        height: 22,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: Colors.white,
+                        ),
+                      )
+                    : const Icon(
+                        Icons.camera_alt,
+                        size: 24,
+                      ),
+                label: Text(
+                  _isStartingScan
+                      ? 'SCANNING...'
+                      : 'START_SCAN',
+                  style: const TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  foregroundColor: Colors.white,
+                  disabledBackgroundColor: Colors.grey.shade400,
+                  disabledForegroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 8),
+
+            Text(
+              connected
+                  ? 'Tekan START_SCAN untuk mengambil gambar dan menjalankan klasifikasi.'
+                  : 'Hubungkan Bluetooth BC-Care terlebih dahulu untuk mengaktifkan START_SCAN.',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
+
+            const SizedBox(height: 16),
+
+            _buildActionButton(
+              icon: Icons.refresh,
+              label: 'Request Latest Result',
+              onTap: !connected
+                  ? null
+                  : () => _service.sendCommand(
+                        '{"command":"GET_LATEST"}',
+                      ),
+            ),
+
+            const SizedBox(height: 12),
+
+            _buildActionButton(
+              icon: Icons.list,
+              label: 'Request All History',
+              onTap: !connected
+                  ? null
+                  : () => _service.sendCommand(
+                        '{"command":"GET_ALL"}',
+                      ),
+            ),
+
+            const SizedBox(height: 12),
+
+            _buildActionButton(
+              icon: Icons.bluetooth_disabled,
+              label: 'Disconnect',
+              onTap: connected ? _disconnect : null,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildActionButton({
+    required IconData icon,
+    required String label,
+    required VoidCallback? onTap,
+    bool isLoading = false,
+  }) {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton.icon(
+        onPressed: onTap,
+        icon: isLoading
+            ? const SizedBox(
+                width: 18,
+                height: 18,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+            : Icon(icon, size: 20),
+        label: Text(label),
+        style: ElevatedButton.styleFrom(
+          minimumSize: const Size(double.infinity, 48),
+        ),
+      ),
+    );
+  }
+}

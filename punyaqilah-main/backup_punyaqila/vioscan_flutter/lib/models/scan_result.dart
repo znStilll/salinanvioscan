@@ -1,0 +1,382 @@
+﻿// lib/models/scan_result.dart
+
+enum RiskLevel { low, medium, high, critical }
+
+enum SkinCondition {
+  basalCellCarcinoma,
+  melanoma,
+  squamousCellCarcinoma,
+  actinicKeratosis,
+  benign,
+  unknown,
+}
+
+class ScanResult {
+  final String id;
+  final DateTime scannedAt;
+  final String imageUrl;
+  final String uvImageUrl;
+  final RiskLevel riskLevel;
+  final double confidenceScore; // 0.0 - 1.0
+  final SkinCondition condition;
+  final List<DetectedRegion> detectedRegions;
+  final String? notes;
+  final String bodyLocation;
+  
+  // RPi-specific fields
+  final String? source; // 'rpi' or 'flutter'
+  final String? mode; // 'uv' or 'white'
+  final UltrasonicData? ultrasonic;
+  final String? rpiDisease;
+  final double? rpiConfidence;
+  final String? rpiRiskLevel; // 'low' | 'high' dari Raspi
+  final Map<String, double>? probabilities; // {'NORMAL': x, 'BCC': y}
+  final String? scanId; // scan_id dari Raspi
+  final String? imageBase64; // gambar JPEG ter-encode base64 (diisi setelah chunks selesai)
+
+  const ScanResult({
+    required this.id,
+    required this.scannedAt,
+    required this.imageUrl,
+    required this.uvImageUrl,
+    required this.riskLevel,
+    required this.confidenceScore,
+    required this.condition,
+    required this.detectedRegions,
+    this.notes,
+    required this.bodyLocation,
+    this.source,
+    this.mode,
+    this.ultrasonic,
+    this.rpiDisease,
+    this.rpiConfidence,
+    this.rpiRiskLevel,
+    this.probabilities,
+    this.scanId,
+    this.imageBase64,
+  });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'scanned_at': scannedAt.toIso8601String(),
+      'image_url': imageUrl,
+      'uv_image_url': uvImageUrl,
+      'risk_level': riskLevel.name,
+      'confidence_score': confidenceScore,
+      'condition': condition.name,
+      'detected_regions': detectedRegions.map((r) => {
+        'x': r.x, 'y': r.y,
+        'width': r.width, 'height': r.height,
+        'confidence': r.confidence,
+        'risk_level': r.riskLevel.name,
+      }).toList(),
+      'notes': notes,
+      'body_location': bodyLocation,
+      'source': source,
+      'mode': mode,
+      'ultrasonic': ultrasonic?.toJson(),
+      'rpi_disease': rpiDisease,
+      'rpi_confidence': rpiConfidence,
+      'rpi_risk_level': rpiRiskLevel,
+      'probabilities': probabilities,
+      'scan_id': scanId,
+      'image_base64': imageBase64,
+    };
+  }
+  String get riskLabel {
+    switch (riskLevel) {
+      case RiskLevel.low:
+        return 'Low Risk';
+      case RiskLevel.medium:
+        return 'Medium Risk';
+      case RiskLevel.high:
+        return 'High Risk';
+      case RiskLevel.critical:
+        return 'Critical';
+    }
+  }
+
+  String get conditionLabel {
+    switch (condition) {
+      case SkinCondition.basalCellCarcinoma:
+        return 'Basal Cell Carcinoma';
+      case SkinCondition.melanoma:
+        return 'Melanoma';
+      case SkinCondition.squamousCellCarcinoma:
+        return 'Squamous Cell Carcinoma';
+      case SkinCondition.actinicKeratosis:
+        return 'Actinic Keratosis';
+      case SkinCondition.benign:
+        return 'Benign';
+      case SkinCondition.unknown:
+        return 'Unknown';
+    }
+  }
+
+  factory ScanResult.fromJson(Map<String, dynamic> json) {
+    final source = json['source'] as String? ?? 'flutter';
+    final rpiDisease = json['rpi_disease'] as String? ?? json['disease'] as String?;
+
+    return ScanResult(
+      id: json['id'] as String? ?? json['scan_id'] as String? ?? DateTime.now().millisecondsSinceEpoch.toString(),
+      scannedAt: json['scanned_at'] != null
+          ? DateTime.tryParse(json['scanned_at'] as String) ?? DateTime.now()
+          : (json['timestamp'] is num
+              ? DateTime.fromMillisecondsSinceEpoch(
+                  ((json['timestamp'] as num) * 1000).round())
+              : DateTime.now()),
+      imageUrl: json['image_url'] as String? ?? '',
+      uvImageUrl: json['uv_image_url'] as String? ?? '',
+      riskLevel: _parseRiskLevel(json['risk_level']),
+      confidenceScore: (json['confidence_score'] as num?)?.toDouble() ??
+                        (json['confidence'] as num?)?.toDouble() ?? 0.0,
+      condition: _parseSkinCondition(json['condition'] ?? json['disease']),
+      detectedRegions: (json['detected_regions'] as List? ?? [])
+          .map((r) => DetectedRegion.fromJson(r as Map<String, dynamic>))
+          .toList(),
+      notes: json['notes'] as String?,
+      bodyLocation: json['body_location'] as String? ?? 'Unknown',
+      source: source,
+      mode: json['mode'] as String?,
+      ultrasonic: json['ultrasonic'] != null
+          ? UltrasonicData.fromJson(json['ultrasonic'] as Map<String, dynamic>)
+          : null,
+      rpiDisease: rpiDisease,
+      rpiConfidence: (json['confidence'] as num?)?.toDouble() ??
+                     (json['rpi_confidence'] as num?)?.toDouble(),
+      rpiRiskLevel: json['risk_level'] is String ? json['risk_level'] as String : null,
+      probabilities: json['probabilities'] is Map
+          ? (json['probabilities'] as Map).map((k, v) =>
+              MapEntry(k.toString(), (v as num?)?.toDouble() ?? 0.0))
+          : null,
+      scanId: json['scan_id'] as String?,
+      imageBase64: json['image_base64'] as String?,
+    );
+  }
+
+  /// Factory khusus payload dari Raspi (bccare_comm.py).
+  /// Payload: {type, scan_id, timestamp, mode, disease, disease_index, confidence,
+  ///           probabilities, risk_level, ultrasonic, image_pending}
+  factory ScanResult.fromRpi(Map<String, dynamic> json) {
+    final disease = (json['disease'] as String? ?? 'UNKNOWN').toUpperCase();
+    final confidence = (json['confidence'] as num?)?.toDouble() ?? 0.0;
+    final isBcc = disease == 'BCC';
+
+    return ScanResult(
+      id: json['scan_id'] as String? ??
+          json['timestamp']?.toString() ??
+          DateTime.now().millisecondsSinceEpoch.toString(),
+      scannedAt: json['timestamp'] is num
+          ? DateTime.fromMillisecondsSinceEpoch(
+              ((json['timestamp'] as num) * 1000).round())
+          : DateTime.now(),
+      imageUrl: '',
+      uvImageUrl: '',
+      riskLevel: _parseRiskLevel(json['risk_level'] ??
+          (isBcc ? 'high' : 'low')),
+      confidenceScore: confidence,
+      condition: isBcc ? SkinCondition.basalCellCarcinoma : SkinCondition.benign,
+      detectedRegions: const [],
+      bodyLocation: 'Device Capture',
+      source: 'rpi',
+      mode: json['mode'] as String? ?? 'uv',
+      ultrasonic: json['ultrasonic'] != null
+          ? UltrasonicData.fromJson(json['ultrasonic'] as Map<String, dynamic>)
+          : null,
+      rpiDisease: disease,
+      rpiConfidence: confidence,
+      rpiRiskLevel: json['risk_level'] as String? ?? (isBcc ? 'high' : 'low'),
+      probabilities: json['probabilities'] is Map
+          ? (json['probabilities'] as Map).map((k, v) =>
+              MapEntry(k.toString(), (v as num?)?.toDouble() ?? 0.0))
+          : null,
+      scanId: json['scan_id'] as String?,
+    );
+  }
+
+  ScanResult copyWith({
+    String? id,
+    DateTime? scannedAt,
+    String? imageUrl,
+    String? uvImageUrl,
+    RiskLevel? riskLevel,
+    double? confidenceScore,
+    SkinCondition? condition,
+    List<DetectedRegion>? detectedRegions,
+    String? notes,
+    String? bodyLocation,
+    String? source,
+    String? mode,
+    UltrasonicData? ultrasonic,
+    String? rpiDisease,
+    double? rpiConfidence,
+    String? rpiRiskLevel,
+    Map<String, double>? probabilities,
+    String? scanId,
+    String? imageBase64,
+  }) {
+    return ScanResult(
+      id: id ?? this.id,
+      scannedAt: scannedAt ?? this.scannedAt,
+      imageUrl: imageUrl ?? this.imageUrl,
+      uvImageUrl: uvImageUrl ?? this.uvImageUrl,
+      riskLevel: riskLevel ?? this.riskLevel,
+      confidenceScore: confidenceScore ?? this.confidenceScore,
+      condition: condition ?? this.condition,
+      detectedRegions: detectedRegions ?? this.detectedRegions,
+      notes: notes ?? this.notes,
+      bodyLocation: bodyLocation ?? this.bodyLocation,
+      source: source ?? this.source,
+      mode: mode ?? this.mode,
+      ultrasonic: ultrasonic ?? this.ultrasonic,
+      rpiDisease: rpiDisease ?? this.rpiDisease,
+      rpiConfidence: rpiConfidence ?? this.rpiConfidence,
+      rpiRiskLevel: rpiRiskLevel ?? this.rpiRiskLevel,
+      probabilities: probabilities ?? this.probabilities,
+      scanId: scanId ?? this.scanId,
+      imageBase64: imageBase64 ?? this.imageBase64,
+    );
+  }
+
+  static RiskLevel _parseRiskLevel(dynamic value) {
+    // Raspi mengirim string 'low'/'high'
+    if (value is String) {
+      switch (value.toLowerCase()) {
+        case 'low':
+          return RiskLevel.low;
+        case 'medium':
+          return RiskLevel.medium;
+        case 'high':
+          return RiskLevel.high;
+        case 'critical':
+          return RiskLevel.critical;
+      }
+    }
+    if (value is int && value >= 0 && value < RiskLevel.values.length) {
+      return RiskLevel.values[value];
+    }
+    return RiskLevel.low; // Nilai aman default jika terjadi anomali data
+  }
+
+  static SkinCondition _parseSkinCondition(dynamic value) {
+    // Raspi mengirim 'NORMAL' / 'BCC'
+    if (value is String) {
+      switch (value.toUpperCase()) {
+        case 'BCC':
+        case 'BASAL CELL CARCINOMA':
+          return SkinCondition.basalCellCarcinoma;
+        case 'NORMAL':
+        case 'BENIGN':
+          return SkinCondition.benign;
+      }
+    }
+    if (value is int && value >= 0 && value < SkinCondition.values.length) {
+      return SkinCondition.values[value];
+    }
+    return SkinCondition.unknown;
+  }
+}
+
+class DetectedRegion {
+  final double x, y, width, height;
+  final double confidence;
+  final RiskLevel riskLevel;
+
+  const DetectedRegion({
+    required this.x,
+    required this.y,
+    required this.width,
+    required this.height,
+    required this.confidence,
+    required this.riskLevel,
+  });
+
+  factory DetectedRegion.fromJson(Map<String, dynamic> json) {
+    return DetectedRegion(
+      x: (json['x'] as num).toDouble(),
+      y: (json['y'] as num).toDouble(),
+      width: (json['width'] as num).toDouble(),
+      height: (json['height'] as num).toDouble(),
+      confidence: (json['confidence'] as num).toDouble(),
+      riskLevel: ScanResult._parseRiskLevel(json['risk_level']),
+    );
+  }
+}
+
+class Patient {
+  final String id;
+  final String name;
+  final String email;
+  final DateTime dateOfBirth;
+  final String gender;
+  final String skinType; // Fitzpatrick I-VI
+  final List<String> riskFactors;
+  final List<ScanResult> scanHistory;
+
+  const Patient({
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.dateOfBirth,
+    required this.gender,
+    required this.skinType,
+    required this.riskFactors,
+    required this.scanHistory,
+  });
+
+  int get age {
+    final now = DateTime.now();
+    int age = now.year - dateOfBirth.year;
+    if (now.month < dateOfBirth.month ||
+        (now.month == dateOfBirth.month && now.day < dateOfBirth.day)) {
+      age--;
+    }
+    return age;
+  }
+
+  factory Patient.fromJson(Map<String, dynamic> json) {
+    return Patient(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      email: json['email'] as String,
+      dateOfBirth: DateTime.parse(json['date_of_birth'] as String),
+      gender: json['gender'] as String,
+      skinType: json['skin_type'] as String,
+      riskFactors: (json['risk_factors'] as List? ?? [])
+          .map((e) => e as String)
+          .toList(),
+      scanHistory: (json['scan_history'] as List? ?? [])
+          .map((e) => ScanResult.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+  }
+}
+
+class UltrasonicData {
+  final double jarakReferensi;
+  final double jarakLesi;
+  final double selisih;
+
+  const UltrasonicData({
+    required this.jarakReferensi,
+    required this.jarakLesi,
+    required this.selisih,
+  });
+
+  factory UltrasonicData.fromJson(Map<String, dynamic> json) {
+    return UltrasonicData(
+      jarakReferensi: (json['jarak_referensi'] as num?)?.toDouble() ?? 0.0,
+      jarakLesi: (json['jarak_lesi'] as num?)?.toDouble() ?? 0.0,
+      selisih: (json['selisih'] as num?)?.toDouble() ?? 0.0,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'jarak_referensi': jarakReferensi,
+      'jarak_lesi': jarakLesi,
+      'selisih': selisih,
+    };
+  }
+}

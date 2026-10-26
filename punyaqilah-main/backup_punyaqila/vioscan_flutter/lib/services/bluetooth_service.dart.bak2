@@ -1,0 +1,491 @@
+﻿import 'dart:async';
+import 'dart:convert';
+
+import 'package:flutter_bluetooth_classic_serial/flutter_bluetooth_classic.dart'
+    as classic;
+import 'package:permission_handler/permission_handler.dart';
+
+import '../models/scan_result.dart';
+
+enum BluetoothConnectionState {
+  disconnected,
+  connecting,
+  connected,
+}
+
+class BluetoothService {
+  BluetoothService._internal() {
+    _dataSub = _bluetooth.onDataReceived.listen(
+      (data) => _onData(data.asString()),
+      onError: (Object error) {
+        _scanProgressController.add('Bluetooth receive error: $error');
+      },
+    );
+  }
+
+  static final BluetoothService _instance =
+      BluetoothService._internal();
+
+  factory BluetoothService() => _instance;
+
+  final classic.FlutterBluetoothClassic _bluetooth =
+      classic.FlutterBluetoothClassic();
+
+  StreamSubscription<dynamic>? _dataSub;
+
+  final _resultsController =
+      StreamController<ScanResult>.broadcast();
+
+  final _connectionController =
+      StreamController<BluetoothConnectionState>.broadcast();
+
+  final _progressController = StreamController<String>.broadcast();
+  final _imageProgressController = StreamController<double>.broadcast();
+  final _readyController = StreamController<String>.broadcast();
+  final _eventController =
+      StreamController<Map<String, dynamic>>.broadcast();
+
+  Stream<ScanResult> get resultsStream => _resultsController.stream;
+
+  Stream<BluetoothConnectionState> get connectionStateStream =>
+      _connectionController.stream;
+
+  Stream<String> get scanProgressStream => _progressController.stream;
+
+  Stream<double> get imageProgressStream =>
+      _imageProgressController.stream;
+
+  Stream<String> get scanReadyStream => _readyController.stream;
+
+  Stream<Map<String, dynamic>> get eventsStream =>
+      _eventController.stream;
+
+  bool _connected = false;
+  bool _connecting = false;
+  bool _scanReady = false;
+  String _currentMode = 'uv';
+  String? _connectedAddress;
+
+  bool get isConnected => _connected;
+  bool get isScanReady => _scanReady;
+  String get currentMode => _currentMode;
+
+  static ScanResult? _lastResult;
+  static ScanResult? get lastResult => _lastResult;
+
+  static String? _pendingImageB64;
+  static String? get lastImageB64 => _pendingImageB64;
+
+  final StringBuffer _receiveBuffer = StringBuffer();
+
+  String? _imageScanId;
+  int _imageChunksExpected = 0;
+  final Map<int, String> _imageParts = {};
+
+  Future<void> requestPermissions() async {
+    await [
+      Permission.bluetoothScan,
+      Permission.bluetoothConnect,
+      Permission.location,
+    ].request();
+  }
+
+  Future<void> scanAndConnect() async {
+    if (_connecting) return;
+
+    if (_connected) {
+      _progressController.add('Sudah terhubung ke BC-Care.');
+      return;
+    }
+
+    _connecting = true;
+    _connectionController.add(BluetoothConnectionState.connecting);
+
+    try {
+      await requestPermissions();
+
+      final supported = await _bluetooth.isBluetoothSupported();
+      if (!supported) {
+        throw Exception('Perangkat tidak mendukung Bluetooth.');
+      }
+
+      final enabled = await _bluetooth.isBluetoothEnabled();
+      if (!enabled) {
+        final activated = await _bluetooth.enableBluetooth();
+        if (!activated) {
+          throw Exception(
+            'Bluetooth belum aktif. Aktifkan Bluetooth di pengaturan HP.',
+          );
+        }
+      }
+
+      _progressController.add('Mencari perangkat Bluetooth yang sudah dipasangkan...');
+
+      final devices = await _bluetooth.getPairedDevices();
+
+      if (devices.isEmpty) {
+        throw Exception(
+          'Belum ada perangkat paired. Pasangkan Raspberry Pi melalui pengaturan Bluetooth Android terlebih dahulu.',
+        );
+      }
+
+      classic.BluetoothDevice? target;
+
+      for (final device in devices) {
+        final name = device.name.toLowerCase();
+        if (name.contains('bccare') || name.contains('bc-care')) {
+          target = device;
+          break;
+        }
+      }
+
+      if (target == null) {
+        throw Exception(
+          'BC-Care tidak ditemukan di daftar paired Bluetooth. Pastikan Raspberry Pi sudah dipasangkan.',
+        );
+      }
+
+      await connectToDevice(target.address, target.name);
+    } catch (e) {
+      _connected = false;
+      _scanReady = false;
+      _connectionController.add(
+        BluetoothConnectionState.disconnected,
+      );
+      _progressController.add('Koneksi gagal: $e');
+    } finally {
+      _connecting = false;
+    }
+  }
+
+  Future<void> connectToDevice(
+    String address, [
+    String? deviceName,
+  ]) async {
+    if (_connecting) return;
+
+    _connecting = true;
+    _connectionController.add(BluetoothConnectionState.connecting);
+
+    try {
+      await requestPermissions();
+
+      final ok = await _bluetooth.connect(address);
+
+      if (!ok) {
+        throw Exception('Gagal terhubung ke $address.');
+      }
+
+      _connected = true;
+      _connectedAddress = address;
+      _scanReady = false;
+
+      _connectionController.add(
+        BluetoothConnectionState.connected,
+      );
+
+      _progressController.add(
+        'Terhubung ke ${deviceName ?? address}. Memeriksa perangkat...',
+      );
+
+      await ping();
+    } catch (e) {
+      _connected = false;
+      _scanReady = false;
+      _connectionController.add(
+        BluetoothConnectionState.disconnected,
+      );
+      _progressController.add('Kesalahan koneksi: $e');
+      rethrow;
+    } finally {
+      _connecting = false;
+    }
+  }
+
+  void _onData(String received) {
+    if (received.isEmpty) return;
+
+    _receiveBuffer.write(received);
+
+    var buffer = _receiveBuffer.toString();
+    var newlineIndex = buffer.indexOf('\n');
+
+    while (newlineIndex >= 0) {
+      final line = buffer.substring(0, newlineIndex).trim();
+      buffer = buffer.substring(newlineIndex + 1);
+
+      if (line.isNotEmpty) {
+        _processLine(line);
+      }
+
+      newlineIndex = buffer.indexOf('\n');
+    }
+
+    _receiveBuffer
+      ..clear()
+      ..write(buffer);
+
+    if (_receiveBuffer.length > 2 * 1024 * 1024) {
+      _receiveBuffer.clear();
+      _progressController.add(
+        'Buffer Bluetooth terlalu besar; data yang tidak lengkap dibuang.',
+      );
+    }
+  }
+
+  void _processLine(String line) {
+    try {
+      final data = jsonDecode(line);
+
+      if (data is! Map) {
+        _progressController.add('Pesan Bluetooth bukan objek JSON.');
+        return;
+      }
+
+      final json = Map<String, dynamic>.from(data);
+      final type = json['type']?.toString();
+
+      _eventController.add(json);
+
+      switch (type) {
+        case 'pong':
+          _progressController.add(
+            'Raspberry Pi merespons. Perangkat siap.',
+          );
+          break;
+
+        case 'scan_ready':
+          _currentMode = json['mode']?.toString() ?? _currentMode;
+          _scanReady = true;
+
+          _readyController.add(_currentMode);
+          _progressController.add(
+            'Alat siap dalam mode ${_currentMode.toUpperCase()}.',
+          );
+          break;
+
+        case 'scan_started':
+          _scanReady = false;
+          _progressController.add('Pemindaian dimulai...');
+          break;
+
+        case 'scan_progress':
+          final percent = json['percent'] ?? 0;
+          final label = json['label'] ?? 'Memproses';
+          _progressController.add('$label ($percent%)');
+          break;
+
+        case 'scan_warning':
+          _progressController.add(
+            'PERINGATAN: ${json['msg'] ?? json['message'] ?? 'Mode simulasi atau peringatan perangkat.'}',
+          );
+          break;
+
+        case 'classification_result':
+        case 'classification_complete':
+          final result = ScanResult.fromRpi(json);
+
+          final image = json['image_base64']?.toString();
+          final resultWithImage = result.copyWith(
+            imageBase64:
+                image != null && image.isNotEmpty ? image : null,
+          );
+
+          _lastResult = resultWithImage;
+
+          if (image != null && image.isNotEmpty) {
+            _pendingImageB64 = image;
+          }
+
+          _resultsController.add(resultWithImage);
+
+          _progressController.add(
+            'Hasil diterima: ${result.rpiDisease ?? result.conditionLabel}',
+          );
+          break;
+
+        case 'image_start':
+          _imageScanId = json['scan_id']?.toString();
+          _imageChunksExpected =
+              (json['chunks'] as num?)?.toInt() ?? 0;
+          _imageParts.clear();
+          _progressController.add('Menerima gambar dari Raspberry Pi...');
+          break;
+
+        case 'image_chunk':
+          if (json['scan_id']?.toString() != _imageScanId) {
+            break;
+          }
+
+          final index = (json['i'] as num?)?.toInt() ?? 0;
+          _imageParts[index] = json['data']?.toString() ?? '';
+
+          if (_imageChunksExpected > 0) {
+            final received = _imageParts.values
+                .where((part) => part.isNotEmpty)
+                .length;
+
+            _imageProgressController.add(
+              (received / _imageChunksExpected).clamp(0.0, 1.0),
+            );
+          }
+          break;
+
+        case 'image_end':
+          if (json['scan_id']?.toString() != _imageScanId) {
+            break;
+          }
+
+          final image = List.generate(
+            _imageChunksExpected,
+            (index) => _imageParts[index] ?? '',
+          ).join();
+
+          _pendingImageB64 = image;
+
+          if (_lastResult != null) {
+            _lastResult = _lastResult!.copyWith(
+              imageBase64: image,
+            );
+          }
+
+          _imageScanId = null;
+          _imageParts.clear();
+          _progressController.add('Transfer gambar selesai.');
+          break;
+
+        case 'all_results':
+          _progressController.add(
+            'Riwayat diterima: ${json['count'] ?? 0} data.',
+          );
+          break;
+
+        case 'error':
+          _scanReady = false;
+          _progressController.add(
+            'Kesalahan Raspberry Pi: ${json['msg'] ?? 'Tidak diketahui'}',
+          );
+          break;
+
+        case 'bye':
+          _progressController.add('Raspberry Pi menutup koneksi.');
+          break;
+
+        default:
+          _progressController.add('Pesan diterima: ${type ?? 'tanpa tipe'}');
+      }
+    } catch (e) {
+      _progressController.add('Gagal membaca pesan JSON: $e');
+    }
+  }
+
+  Future<void> sendCommand(String command) async {
+    if (!_connected) {
+      throw Exception('Bluetooth belum terhubung.');
+    }
+
+    // Selalu kirim JSON + newline sesuai protokol bccare_comm.py.
+    String line = command.trim();
+
+    if (!line.startsWith('{')) {
+      final normalized = line.toUpperCase();
+      line = jsonEncode({'command': normalized});
+    }
+
+    line = line.replaceAll(RegExp(r'[\r\n]+$'), '');
+
+    final sent = await _bluetooth.sendString('$line\n');
+
+    if (!sent) {
+      throw Exception('Gagal mengirim perintah Bluetooth.');
+    }
+  }
+
+  Future<void> ping() => sendCommand(
+        jsonEncode({'command': 'PING'}),
+      );
+
+  Future<void> prepareScanCommand({String mode = 'uv'}) async {
+    if (mode != 'uv' && mode != 'white') {
+      throw ArgumentError('Mode harus uv atau white.');
+    }
+
+    _currentMode = mode;
+    _scanReady = false;
+
+    await sendCommand(
+      jsonEncode({
+        'command': 'PREPARE_SCAN',
+        'mode': mode,
+      }),
+    );
+
+    _progressController.add(
+      'Perintah persiapan ${mode.toUpperCase()} dikirim; menunggu scan_ready.',
+    );
+  }
+
+  Future<void> startScanCommand({String mode = 'uv'}) async {
+    if (!_connected) {
+      throw Exception('Bluetooth belum terhubung.');
+    }
+
+    if (!_scanReady) {
+      throw Exception('Siapkan alat dan tunggu scan_ready terlebih dahulu.');
+    }
+
+    if (mode != _currentMode) {
+      throw Exception(
+        'Mode belum siap. Siapkan alat dalam mode ${mode.toUpperCase()} terlebih dahulu.',
+      );
+    }
+
+    await sendCommand(
+      jsonEncode({
+        'command': 'START_SCAN',
+        'mode': mode,
+      }),
+    );
+  }
+
+  Future<void> sendStartScanCommand({String mode = 'uv'}) =>
+      startScanCommand(mode: mode);
+
+  Future<void> requestLatest() => sendCommand(
+        jsonEncode({'command': 'GET_LATEST'}),
+      );
+
+  Future<void> requestAll() => sendCommand(
+        jsonEncode({'command': 'GET_ALL'}),
+      );
+
+  Future<void> disconnect() async {
+    try {
+      if (_connected) {
+        await _bluetooth.sendString(
+          '${jsonEncode({'command': 'DISCONNECT'})}\n',
+        );
+      }
+    } catch (_) {
+      // Tetap lanjut membersihkan koneksi.
+    }
+
+    try {
+      await _bluetooth.disconnect();
+    } catch (_) {}
+
+    _connected = false;
+    _connectedAddress = null;
+    _scanReady = false;
+    _receiveBuffer.clear();
+
+    _connectionController.add(
+      BluetoothConnectionState.disconnected,
+    );
+    _progressController.add('Bluetooth terputus.');
+  }
+
+  void dispose() {
+    _dataSub?.cancel();
+  }
+}

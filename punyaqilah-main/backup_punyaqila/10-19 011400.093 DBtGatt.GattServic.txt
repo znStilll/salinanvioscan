@@ -1,0 +1,1024 @@
+10-19 01:14:00.093 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:E7:6F, type=1
+10-19 01:14:00.093 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:1C:57, type=1
+10-19 01:14:00.093 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:14:C5, type=1
+10-19 01:14:00.093 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:68:1C, type=3
+10-19 01:14:00.093 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:FD:88, type=1
+10-19 01:14:00.105 W/ThermalCollecto( 6270): type=1400 audit(0.0:147622): avc:  denied  { read } for  
+name="scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_app:s0 tcontext=u:object_r:sysfs_cpu0maxfreq:s0 
+tclass=file permissive=0
+10-19 01:14:00.135 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:00.135 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:00.136 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:00.136 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:00.129 W/ThermalCollecto( 6270): type=1400 audit(0.0:147623): avc:  denied  { read } for  
+name="scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_app:s0 tcontext=u:object_r:sysfs_cpu0maxfreq:s0 
+tclass=file permissive=0
+10-19 01:14:00.136 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:00.136 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:00.138 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:00.138 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:00.368 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:00.429 W/CameraOpt_Dispa( 1826): type=1400 audit(0.0:147626): avc:  denied  { getattr } for  
+path="/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_server:s0 
+tcontext=u:object_r:sysfs_cpu0maxfreq:s0 tclass=file permissive=0
+10-19 01:14:00.583 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:00.774 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:00.774 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:00.774 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-64, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:00.774 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:00.774 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:00.840 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:00.952 W/crkd    ( 2742): java.lang.NoSuchMethodException: bvuz.getScopes []
+10-19 01:14:01.437 W/CameraOpt_Dispa( 1826): type=1400 audit(0.0:147627): avc:  denied  { getattr } for  
+path="/sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_server:s0 
+tcontext=u:object_r:sysfs_cpu0maxfreq:s0 tclass=file permissive=0
+10-19 01:14:01.484 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:CF:0F, type=1
+10-19 01:14:01.484 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:6A:CC, type=1
+10-19 01:14:01.484 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:65:F2, type=1
+10-19 01:14:01.484 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:BB:AD, type=3
+10-19 01:14:01.484 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:F4:3C, type=1
+10-19 01:14:01.484 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:0F:7D, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:82:73, type=3
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:14:03, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:00:C9, type=1
+10-19 01:14:01.489 W/ThermalCollecto( 6270): type=1400 audit(0.0:147628): avc:  denied  { read } for  
+name="scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_app:s0 tcontext=u:object_r:sysfs_cpu0maxfreq:s0 
+tclass=file permissive=0
+10-19 01:14:01.489 W/ThermalCollecto( 6270): type=1400 audit(0.0:147629): avc:  denied  { read } for  
+name="scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_app:s0 tcontext=u:object_r:sysfs_cpu0maxfreq:s0 
+tclass=file permissive=0
+10-19 01:14:01.489 W/ThermalCollecto( 6270): type=1400 audit(0.0:147630): avc:  denied  { read } for  
+name="scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_app:s0 tcontext=u:object_r:sysfs_cpu0maxfreq:s0 
+tclass=file permissive=0
+10-19 01:14:01.493 W/ThermalCollecto( 6270): type=1400 audit(0.0:147631): avc:  denied  { read } for  
+name="scaling_max_freq" dev="sysfs" ino=72141 scontext=u:r:system_app:s0 tcontext=u:object_r:sysfs_cpu0maxfreq:s0 
+tclass=file permissive=0
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:A3:37, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:3D:9B, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:98:5B, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:E7:6F, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:1C:57, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:14:C5, type=1
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:68:1C, type=3
+10-19 01:14:01.485 D/BtGatt.GattService( 4653): getDeviceType() - device=XX:XX:XX:XX:FD:88, type=1
+10-19 01:14:01.495 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:01.495 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:01.497 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:01.497 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:01.497 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:01.497 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:01.498 E/FileUtil( 6270): java.io.FileNotFoundException: 
+sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq: open failed: EACCES (Permission denied)
+10-19 01:14:01.498 E/FileUtil( 6270): Caused by: android.system.ErrnoException: open failed: EACCES (Permission 
+denied)
+10-19 01:14:01.610 D/ScrollScenario( 1826): ScrollState: fling end on com.vioscan.vioscan_flutter
+10-19 01:14:01.902 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:01.902 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:02.074 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:02.074 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:02.076 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-65, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:02.078 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:02.079 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:02.359 W/BtAudioPlaybackCallback( 4653): onPlaybackConfigChanged() count: 3
+10-19 01:14:02.359 W/BtAudioPlaybackCallback( 4653): onPlaybackConfigChanged() count: 3
+10-19 01:14:02.359 W/BtAudioPlaybackCallback( 4653): handleMessage: MSG_EXECUTE_FUNC
+10-19 01:14:02.359 W/BtAudioPlaybackCallback( 4653): handleMessage: MSG_EXECUTE_FUNC
+10-19 01:14:02.730 D/JavaheapMonitor(21223): Java heap used=10M max=256M, proc: com.xiaomi.bluetooth
+10-19 01:14:02.934 D/BluetoothAdapter(21223): isLeEnabled(): ON
+10-19 01:14:02.936 V/BluetoothPluginCloud(21223): queryPluginFeatureSupport: pluginVersion = 1.4_1.53featureId = 
+scan_aux_V
+10-19 01:14:02.942 D/BluetoothAdapter(21223): isLeEnabled(): ON
+10-19 01:14:02.943 I/BtGatt.ScanController( 4653): registerScanner Uid/Pid=1002/21223
+10-19 01:14:02.944 D/BtGatt.ScanController( 4653): registerScanner() - UUID=498f8630-f3f7-4062-8a56-c966b6db7484
+10-19 01:14:02.945 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(175)] RegisterScanner: in shim layer, 
+UUID=498f8630-f3f7-4062-8a56-c966b6db7484
+10-19 01:14:02.946 D/BtGatt.ScanController( 4653): onScannerRegistered() - 
+UUID=498f8630-f3f7-4062-8a56-c966b6db7484, scannerId=3, status=0
+10-19 01:14:02.946 D/BluetoothLeScanner(21223): onScannerRegistered() - status=0 scannerId=3 mScannerId=0
+10-19 01:14:02.947 I/BtGatt.ScanController( 4653): startScan Uid/Pid=1002/21223
+10-19 01:14:02.947 D/BtGatt.ScanController( 4653): start scan with filters
+10-19 01:14:02.949 D/BtGatt.ScanController( 4653): enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter 
+[mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, 
+mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, 
+mManufacturerId=911, mManufacturerData=[], mManufacturerDataMask=null, mAdvertisingDataType=-1, 
+mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter 
+[mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, 
+mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, 
+mManufacturerId=65535, mManufacturerData=[77], mManufacturerDataMask=null, mAdvertisingDataType=-1, 
+mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter 
+[mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, 
+mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fe95-0000-1000-8000-00805f9b34fb, mServiceData=[], 
+mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, 
+mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], 
+BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, 
+mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, 
+mServiceDataUuid=0000fdaa-0000-1000-8000-00805f9b34fb, mServiceData=[], mServiceDataMask=null, mManufacturerId=-1, 
+mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, 
+mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, 
+mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, 
+mServiceDataUuid=0000fdee-0000-1000-8000-00805f9b34fb, mServiceData=[1, 1, 1], mServiceDataMask=null, 
+mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, 
+mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter 
+[mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, 
+mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, 
+mManufacturerId=76, mManufacturerData=[], mManufacturerDataMask=null, mAdvertisingDataType=-1, 
+mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter 
+[mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, 
+mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fd2d-0000-1000-8000-00805f9b34fb, mServiceData=[], 
+mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, 
+mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null]])
+10-19 01:14:02.954 I/BtGatt.ScanManager( 4653): msg.what = MSG_RECORD_CALLER, msg.arg1 = None
+10-19 01:14:02.955 W/BatteryStatsImpl( 1826): noteBluetoothScanStartedLocked deltaScanCount: 1697 uid:1002
+10-19 01:14:02.955 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:02.955 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:02.955 D/BtGatt.ScanManager( 4653): startScan()  [ScanClient scanModeApp 0 scanModeUsed 0 [appScanStats 
+android.uid.bluetooth:1002]]
+10-19 01:14:02.955 I/BtGatt.ScanManager( 4653): msg.what = MSG_START_BLE_SCAN, msg.arg1 = None
+10-19 01:14:02.955 D/BtGatt.ScanManager( 4653): handling starting scan
+10-19 01:14:02.957 V/BtGatt.ScanManager( 4653): isForeground: true for com.xiaomi.bluetooth:1002
+10-19 01:14:02.957 D/BtGatt.ScanManager( 4653): Scan mode update during screen on from SCAN_MODE_LOW_POWER to 
+SCAN_MODE_LOW_POWER
+10-19 01:14:02.957 D/BtGatt.ScanManager( 4653): track LE scan event: callerPackage = [com.xiaomi.bluetooth], 
+scanMode = [0], reportDelayMillis = [0], behavior = [1], scannerId = [3], duration = [0]
+10-19 01:14:02.957 D/BtGatt.ScanManager( 4653): startRegularScan: mIsMsftSupported=false
+10-19 01:14:02.957 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(287)] ScanFilterEnable in shim layer
+10-19 01:14:02.958 D/BtGatt.ScanController( 4653): onScanFilterEnableDisabled() - clientIf=3, status=0, action=1
+10-19 01:14:02.958 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.958 D/BluetoothAdapter(21223): isLeEnabled(): ON
+10-19 01:14:02.958 D/BtGatt.ScanManager( 4653): configureScanFilters rssiThreshold: -60, 15
+10-19 01:14:02.959 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.959 I/BtGatt.ScanController( 4653): registerScanner Uid/Pid=1002/21223
+10-19 01:14:02.959 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.959 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.959 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.959 D/BtGatt.ScanController( 4653): registerScanner() - UUID=dfa5a241-06ce-488a-86d1-cc3a3872b4f5
+10-19 01:14:02.959 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:5
+10-19 01:14:02.959 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.959 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.959 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(175)] RegisterScanner: in shim layer, 
+UUID=dfa5a241-06ce-488a-86d1-cc3a3872b4f5
+10-19 01:14:02.959 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.960 D/BtGatt.ScanController( 4653): onScannerRegistered() - 
+UUID=dfa5a241-06ce-488a-86d1-cc3a3872b4f5, scannerId=4, status=0
+10-19 01:14:02.960 D/BluetoothLeScanner(21223): onScannerRegistered() - status=0 scannerId=4 mScannerId=0
+10-19 01:14:02.960 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.961 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.961 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.961 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.961 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:8
+10-19 01:14:02.961 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.961 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.961 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.961 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.962 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:9
+10-19 01:14:02.962 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.962 I/BtGatt.ScanController( 4653): startScan Uid/Pid=1002/21223
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): start scan with filters
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.962 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.962 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:28
+10-19 01:14:02.962 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.962 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.962 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:25
+10-19 01:14:02.962 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.962 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.962 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.963 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.963 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.963 D/BtGatt.ScanController( 4653): enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter 
+[mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, 
+mServiceSolicitationUuidMask=null, mServiceDataUuid=0000fd2d-0000-1000-8000-00805f9b34fb, mServiceData=[2, 2], 
+mServiceDataMask=[-1, -4], mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, 
+mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null]])
+10-19 01:14:02.963 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:10
+10-19 01:14:02.963 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.963 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.963 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.963 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=3, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.963 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:12
+10-19 01:14:02.963 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=3
+10-19 01:14:02.963 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=3, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): callback done for scannerId - 3 status - 0
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): configureRegularScanParams() - queue=3
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): curPhy: 255 mLastConfiguredScanPhy: 255
+10-19 01:14:02.963 D/BtGatt.ScanManager( 4653): apply scan timeout (300000)to scannerId 3
+10-19 01:14:02.966 I/BtGatt.ScanManager( 4653): msg.what = MSG_RECORD_CALLER, msg.arg1 = None
+10-19 01:14:02.967 W/BatteryStatsImpl( 1826): noteBluetoothScanStartedLocked deltaScanCount: 1698 uid:1002
+10-19 01:14:02.967 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:02.968 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:02.968 D/BtGatt.ScanManager( 4653): startScan()  [ScanClient scanModeApp 0 scanModeUsed 0 [appScanStats 
+android.uid.bluetooth:1002]]
+10-19 01:14:02.968 I/BtGatt.ScanManager( 4653): msg.what = MSG_START_BLE_SCAN, msg.arg1 = None
+10-19 01:14:02.968 D/BtGatt.ScanManager( 4653): handling starting scan
+10-19 01:14:02.969 V/BtGatt.ScanManager( 4653): isForeground: true for com.xiaomi.bluetooth:1002
+10-19 01:14:02.970 D/BtGatt.ScanManager( 4653): Scan mode update during screen on from SCAN_MODE_LOW_POWER to 
+SCAN_MODE_LOW_POWER
+10-19 01:14:02.970 D/BtGatt.ScanManager( 4653): track LE scan event: callerPackage = [com.xiaomi.bluetooth], 
+scanMode = [0], reportDelayMillis = [0], behavior = [1], scannerId = [4], duration = [0]
+10-19 01:14:02.970 D/BtGatt.ScanManager( 4653): startRegularScan: mIsMsftSupported=false
+10-19 01:14:02.970 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(287)] ScanFilterEnable in shim layer
+10-19 01:14:02.970 D/BtGatt.ScanController( 4653): onScanFilterEnableDisabled() - clientIf=4, status=0, action=1
+10-19 01:14:02.970 D/BtGatt.ScanManager( 4653): callback done for scannerId - 4 status - 0
+10-19 01:14:02.970 D/BtGatt.ScanManager( 4653): configureScanFilters rssiThreshold: -128, 0
+10-19 01:14:02.971 I/bt_stack( 4653): [INFO:le_scanning_manager.cc(262)] ScanFilterAdd in shim layer
+10-19 01:14:02.971 D/BtGatt.ScanController( 4653): onScanFilterConfig() - clientIf=4, action = 0 status = 0, 
+filterType=0, availableSpace=0
+10-19 01:14:02.971 D/BtGatt.ScanManager( 4653): callback done for scannerId - 4 status - 0
+10-19 01:14:02.972 D/BtGatt.ScanManager( 4653): configureFilterParameter 500 10000 1 0
+10-19 01:14:02.972 I/BtGatt.JNI( 4653): [com_android_bluetooth_gatt.cpp(1642)] gattClientScanFilterParamAddNative: 
+Add Scan Filter, filter_index:13
+10-19 01:14:02.972 I/bt_shim_scanner( 4653): [le_scanning_manager.cc(223)] ScanFilterParamSetup: in shim layer, 
+clientIf=4
+10-19 01:14:02.972 D/BtGatt.ScanController( 4653): onScanFilterParamsConfigured() - clientIf=4, status=0, action=0, 
+availableSpace=0
+10-19 01:14:02.972 D/BtGatt.ScanManager( 4653): callback done for scannerId - 4 status - 0
+10-19 01:14:02.972 D/BtGatt.ScanManager( 4653): configureRegularScanParams() - queue=4
+10-19 01:14:02.972 D/BtGatt.ScanManager( 4653): curPhy: 255 mLastConfiguredScanPhy: 255
+10-19 01:14:02.972 D/BtGatt.ScanManager( 4653): apply scan timeout (300000)to scannerId 4
+10-19 01:14:03.045 W/IgMetaConfig( 2812): Could not obtain MC: Session not provided. Fix callsite to pass Session. 
+10-19 01:14:03.045 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:03.048 W/IgMetaConfig( 2812): Could not obtain MC: Session not provided. Fix callsite to pass Session. 
+10-19 01:14:03.048 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:03.234 W/libc    ( 2812): Access denied finding property "ro.vendor.perf.scroll_opt"
+10-19 01:14:03.442 E/ServiceDeliveryCompat( 2425): java.lang.IllegalArgumentException: Unknown authority 
+com.miui.personalassistant.servicedeliver.system.provider
+10-19 01:14:03.616 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:03.616 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:03.616 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-55, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:03.616 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:03.616 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:03.616 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:03.616 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:04.185 D/AudioSystem( 2812): onNewService: media.audio_policy service obtained 0xb400006ee6c11b80
+10-19 01:14:04.255 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:04.255 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:04.255 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-58, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:04.255 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:04.255 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:04.255 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:04.255 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:04.273 W/ClassLoaderConfiguration( 2812): 10 suppressed exceptions were found in BaseDexClassLoader.
+10-19 01:14:04.274 E/ServiceDeliveryCompat( 2425): android.content.pm.PackageManager$NameNotFoundException: 
+com.miui.personalassistant
+10-19 01:14:04.274 E/ServiceDeliveryCompat( 2425):      at com.miui.home.launcher.servicedeliver.ServiceDeliveryReplaceH
+elper.$r8$lambda$kHzHz2xHnB1X9uBTKH46cK34bHE(ServiceDeliveryReplaceHelper.java:0)
+10-19 01:14:04.277 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.277 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from /data/app/~
+~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_arservicesforpersonsegmentation.apk 
+because: Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.278 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.278 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_config.xxhdpi.apk 
+because: Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.279 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.279 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_executorch.apk because: 
+Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.280 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.280 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_heliumcore.apk because: 
+Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.281 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.281 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_heliumiab.apk because: 
+Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.283 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.283 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_horizon.apk because: 
+Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.284 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.284 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_i18n_id_ID.apk because: 
+Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.285 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.285 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_pytorch.apk because: 
+Failed to find entry 'classes.dex': Entry not found
+10-19 01:14:04.286 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.286 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_slam.apk because: Failed 
+to find entry 'classes.dex': Entry not found
+10-19 01:14:04.287 W/ClassLoaderConfiguration( 2812): Suppressed exception:
+10-19 01:14:04.287 W/ClassLoaderConfiguration( 2812): java.io.IOException: Failed to open dex files from 
+/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/split_spm.apk because: Failed 
+to find entry 'classes.dex': Entry not found
+10-19 01:14:04.306 E/ActionQueryTaskListener( 2812): 0 onLoadBatchComplete exception: null BACKGROUND modules: 
+[pytorch] actions: [LOAD=[pytorch],COMPLETE_SUCCESS=[pytorch]]
+10-19 01:14:04.345 W/SWPool3_t1of1( 2812): type=1400 audit(0.0:147636): avc:  granted  { execute } for  
+path="/data/data/com.instagram.android/lib-compressed/libtorchmerged.so" dev="dm-63" ino=3667246 
+scontext=u:r:untrusted_app:s0:c55,c257,c512,c768 tcontext=u:object_r:app_data_file:s0:c55,c257,c512,c768 
+tclass=file app=com.instagram.android
+10-19 01:14:04.429 D/nativeloader( 2812): Load /data/data/com.instagram.android/lib-compressed/libtorchmerged.so 
+using class loader ns clns-11 
+(caller=/data/app/~~nfdpBNUJJR7z4t93YZXGcw==/com.instagram.android-oc3a3i1xkIP--TyJkNyiYw==/base.apk!classes3.dex): 
+ok
+10-19 01:14:04.450 E/ActionQueryTaskListener( 2812): 1 onLoadBatchComplete exception: null BACKGROUND modules: 
+[executorch] actions: [LOAD=[executorch],COMPLETE_SUCCESS=[executorch]]
+10-19 01:14:04.592 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:04.597 W/libc    ( 2812): Access denied finding property "vendor.mivk.log.debug"
+10-19 01:14:04.816 I/bt_btm_pm( 4653): [btm_pm.cc(278)] BTM_SetPowerMode: Setting power mode for 
+peer:xx:xx:xx:xx:68:1c current_mode:immediate:active[0] new_mode:forced:sniff[2]
+10-19 01:14:04.816 I/bt_btm_pm( 4653): [btm_pm.cc(577)] btm_pm_snd_md_req: Switching from immediate:active[0x00] to 
+immediate:sniff[0x02]
+10-19 01:14:04.819 I/bt_btm_pm( 4653): [btm_pm.cc(695)] btm_pm_proc_cmd_status: Clearing pending power mode link 
+state:immediate:pending
+10-19 01:14:04.819 E/bluetooth( 4653): [bta_dm_pm.cc(1230)] bta_dm_pm_btm_status: Received unknown power mode 
+status event:5
+10-19 01:14:04.828 I/bt_btm_pm( 4653): [btm_pm.cc(743)] btm_pm_proc_mode_change: Power mode switched from %s[%hhu] 
+to %s[%hhu] on hci handle %d
+10-19 01:14:04.986 W/libc    ( 2812): Access denied finding property "ro.hardware.chipname"
+10-19 01:14:05.553 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96095517, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:05.556 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96095517, downTime=96095517, phoneEventTime=1792347245551 } moveCount:0
+10-19 01:14:05.580 I/BufferQueueProducer( 1167): [d1c3009 SurfaceView[com.vioscan.vioscan_flutter/com.vioscan.viosca
+n_flutter.MainActivity](BLAST)#55798](this:0xb400007c3a68f0b0,id:-1,api:0,p:-1,c:1167) queueBuffer: fps=0.30 
+dur=6730.75 max=6680.75 min=50.00
+10-19 01:14:05.585 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:05.635 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.635 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.637 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.637 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.642 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.642 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.644 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.644 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.644 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.644 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.645 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.645 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.646 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.646 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.647 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.647 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.647 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.647 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.650 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96095616, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:05.651 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96095616, downTime=96095517, phoneEventTime=1792347245650 } moveCount:0
+10-19 01:14:05.650 W/IgMetaConfig( 2812): Could not obtain MC: not_user_session session=X.05Eb@49936b
+10-19 01:14:05.650 W/IgMetaConfig( 2812): java.lang.RuntimeException: Could not obtain MC, call-site will receive 
+default values
+10-19 01:14:05.687 D/FlutterBluePlugin(26642): Connecting to E4:5F:01:32:68:1C (id: 22)
+10-19 01:14:05.688 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:05.688 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:05.688 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1b, addressType=1, 
+address=XX:XX:XX:XX:4A:8C, primaryPhy=1, secondaryPhy=0, advertisingSid=0xff, txPower=127, rssi=-60, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:05.688 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:05.688 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:05.690 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:05.698 D/BluetoothAdapterService( 4653): cancelDiscovery
+10-19 01:14:05.698 I/bt_btif_dm( 4653): [btif_dm.cc(3082)] btif_dm_cancel_discovery: Cancel search
+10-19 01:14:05.698 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:05.698 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(1180)] bta_dm_search_sm_execute: 
+state:BTA_DM_SEARCH_IDLE, event:BTA_DM_API_SEARCH_CANCEL_EVT[0x1]
+10-19 01:14:05.698 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:05.698 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:05.698 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:05.710 I/bt_btif_sock( 4653): [btif_sock.cc(231)] btsock_connect: Attempting socket connection for 
+device: xx:xx:xx:xx:68:1c, type: 1, channel: -1, app_uid: 10113, data_path: 0, hub_id: 0, endpoint_id: 0, 
+max_rx_packet_size: 0
+10-19 01:14:05.705 W//system/bin/init(    1): type=1107 audit(0.0:147639): uid=0 auid=4294967295 ses=4294967295 
+subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.service.bt.echo_support pid=4653 uid=1002 
+gid=1002 scontext=u:r:bluetooth:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-19 01:14:05.710 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(497)] btsock_rfc_connect: btsock_rfc_connect: 
+channel= -1, flags= 3, app_uid= 10113
+10-19 01:14:05.710 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(546)] btsock_rfc_connect: 
+service_uuid:00001101-0000-1000-8000-00805f9b34fb, bd_addr:xx:xx:xx:xx:68:1c, slot_id:47
+10-19 01:14:05.710 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(550)] btsock_rfc_connect: 
+is_support_skip_rfcomm_auth:false
+10-19 01:14:05.711 W/libc    ( 4653): Unable to set property "persist.vendor.service.bt.echo_support" to "false": 
+PROP_ERROR_PERMISSION_DENIED (0x18)
+10-19 01:14:05.711 E/bluetooth( 4653): [system_properties.cc(46)] SetSystemProperty: Set property 
+persist.vendor.service.bt.echo_support failed with error code -1
+10-19 01:14:05.712 I/bt_btm_pm( 4653): [btm_pm.cc(278)] BTM_SetPowerMode: Setting power mode for 
+peer:xx:xx:xx:xx:68:1c current_mode:immediate:sniff[2] new_mode:forced:active[0]
+10-19 01:14:05.712 I/bt_btm_pm( 4653): [btm_pm.cc(577)] btm_pm_snd_md_req: Switching from immediate:sniff[0x02] to 
+immediate:active[0x00]
+10-19 01:14:05.712 I/bluetooth( 4653): [bta_jv_act.cc(962)] bta_jv_start_discovery: Started service discovery 
+bd_addr:xx:xx:xx:xx:68:1c num_uuid:1 rfcomm_slot_id:47
+10-19 01:14:05.718 I/bt_btm_pm( 4653): [btm_pm.cc(695)] btm_pm_proc_cmd_status: Clearing pending power mode link 
+state:immediate:pending
+10-19 01:14:05.722 I/BluetoothSocket(26642): connect(), SocketState: INIT, mPfd: {ParcelFileDescriptor: 
+java.io.FileDescriptor@adfdc56}
+10-19 01:14:05.723 D/BluetoothSocket(26642): mRstricteState = false
+10-19 01:14:05.767 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96095732, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:05.768 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96095732, downTime=96095732, phoneEventTime=1792347245765 } moveCount:0
+10-19 01:14:05.802 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:05.830 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:05.830 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:05.830 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-89, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:05.830 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:05.830 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:05.830 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:05.830 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:05.838 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96095803, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:05.845 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96095803, downTime=96095732, phoneEventTime=1792347245837 } moveCount:0
+10-19 01:14:05.914 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96095880, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:05.915 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96095880, downTime=96095880, phoneEventTime=1792347245914 } moveCount:0
+10-19 01:14:05.993 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96095958, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:05.993 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96095958, downTime=96095880, phoneEventTime=1792347245992 } moveCount:0
+10-19 01:14:06.009 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:06.032 I/bt_btm_pm( 4653): [btm_pm.cc(743)] btm_pm_proc_mode_change: Power mode switched from %s[%hhu] 
+to %s[%hhu] on hci handle %d
+10-19 01:14:06.050 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.065 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96096031, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.065 I/bluetooth( 4653): [bta_jv_act.cc(841)] bta_jv_start_discovery_cback: Received service 
+discovery callback success bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS
+10-19 01:14:06.065 I/bluetooth( 4653): [bta_jv_act.cc(865)] bta_jv_start_discovery_cback: Issuing service discovery 
+complete callback bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS status:tBTA_JV_STATUS::FAILURE scn:0
+10-19 01:14:06.065 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1138)] jv_dm_cback: handling 
+event:BTA_JV_DISCOVERY_COMP_EVT, slot_id:47
+10-19 01:14:06.066 E/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1270)] handle_discovery_comp: SDP service 
+discovery completed for slot_id: 47 with the result status: tBTA_JV_STATUS::FAILURE, scn: 0
+10-19 01:14:06.066 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(660)] cleanup_rfc_slot: cleanup_rfc_slot: 
+slot->fd= 356, slot->app_fd= -1, slot->rfc_handle= 0, slot->id= 47
+10-19 01:14:06.066 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(664)] cleanup_rfc_slot: disconnected from RFCOMM 
+socket connections for device: xx:xx:xx:xx:68:1c, scn: -1, app_uid: 10113, slot_id: 47, socket_id: 0
+10-19 01:14:06.066 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96096031, downTime=96096031, phoneEventTime=1792347246065 } moveCount:0
+10-19 01:14:06.066 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.066 W/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1410)] btsock_rfc_signaled_flagged: RFCOMM 
+slot_id 47 not found.
+10-19 01:14:06.071 I/flutter (26642): [BT] Gagal terhubung ke E4:5F:01:32:68:1C: PlatformException(connect_error, 
+read failed, socket might closed or timeout, read ret: -1, java.io.IOException: read failed, socket might closed or 
+timeout, read ret: -1
+10-19 01:14:06.071 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readAll(BluetoothSocket.java:1519)
+10-19 01:14:06.071 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readInt(BluetoothSocket.java:1537)
+10-19 01:14:06.071 I/flutter (26642):   at android.bluetooth.BluetoothSocket.connect(BluetoothSocket.java:738)
+10-19 01:14:06.071 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:57)
+10-19 01:14:06.071 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:64)
+10-19 01:14:06.071 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.lambda$onMethodCall$4(FlutterBluetoothSerialPlugin.java:1007)
+10-19 01:14:06.071 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.$r8$lambda$U3e35LWJSZrpW-jeI3rqoMDHwZY(FlutterBluetoothSerialPlugin.java:0)
+10-19 01:14:06.071 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-19 01:14:06.071 I/flutter (26642):   at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:308)
+10-19 01:14:06.071 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-19 01:14:06.071 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-19 01:14:06.071 I/flutter (26642):   at java.lang.Thread.run(Thread.java:1571)
+10-19 01:14:06.071 I/flutter (26642): , null)
+10-19 01:14:06.161 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96096126, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.166 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96096126, downTime=96096031, phoneEventTime=1792347246159 } moveCount:0
+10-19 01:14:06.224 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:06.224 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96096190, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.225 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96096190, downTime=96096190, phoneEventTime=1792347246224 } moveCount:0
+10-19 01:14:06.320 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96096285, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.322 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96096285, downTime=96096190, phoneEventTime=1792347246318 } moveCount:0
+10-19 01:14:06.355 D/FlutterBluePlugin(26642): Connecting to E4:5F:01:32:68:1C (id: 23)
+10-19 01:14:06.357 D/BluetoothAdapterService( 4653): cancelDiscovery
+10-19 01:14:06.357 I/bt_btif_dm( 4653): [btif_dm.cc(3082)] btif_dm_cancel_discovery: Cancel search
+10-19 01:14:06.357 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.357 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(1180)] bta_dm_search_sm_execute: 
+state:BTA_DM_SEARCH_IDLE, event:BTA_DM_API_SEARCH_CANCEL_EVT[0x1]
+10-19 01:14:06.357 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.357 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.357 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.358 I/bt_btif_sock( 4653): [btif_sock.cc(231)] btsock_connect: Attempting socket connection for 
+device: xx:xx:xx:xx:68:1c, type: 1, channel: -1, app_uid: 10113, data_path: 0, hub_id: 0, endpoint_id: 0, 
+max_rx_packet_size: 0
+10-19 01:14:06.358 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(497)] btsock_rfc_connect: btsock_rfc_connect: 
+channel= -1, flags= 3, app_uid= 10113
+10-19 01:14:06.358 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(546)] btsock_rfc_connect: 
+service_uuid:00001101-0000-1000-8000-00805f9b34fb, bd_addr:xx:xx:xx:xx:68:1c, slot_id:48
+10-19 01:14:06.358 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(550)] btsock_rfc_connect: 
+is_support_skip_rfcomm_auth:false
+10-19 01:14:06.364 W/libc    ( 4653): Unable to set property "persist.vendor.service.bt.echo_support" to "false": 
+PROP_ERROR_PERMISSION_DENIED (0x18)
+10-19 01:14:06.364 E/bluetooth( 4653): [system_properties.cc(46)] SetSystemProperty: Set property 
+persist.vendor.service.bt.echo_support failed with error code -1
+10-19 01:14:06.365 I/bluetooth( 4653): [bta_jv_act.cc(962)] bta_jv_start_discovery: Started service discovery 
+bd_addr:xx:xx:xx:xx:68:1c num_uuid:1 rfcomm_slot_id:48
+10-19 01:14:06.357 W//system/bin/init(    1): type=1107 audit(0.0:147640): uid=0 auid=4294967295 ses=4294967295 
+subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.service.bt.echo_support pid=4653 uid=1002 
+gid=1002 scontext=u:r:bluetooth:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-19 01:14:06.365 I/BluetoothSocket(26642): connect(), SocketState: INIT, mPfd: {ParcelFileDescriptor: 
+java.io.FileDescriptor@31818ad}
+10-19 01:14:06.365 D/BluetoothSocket(26642): mRstricteState = false
+10-19 01:14:06.385 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96096350, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.386 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96096350, downTime=96096350, phoneEventTime=1792347246384 } moveCount:0
+10-19 01:14:06.398 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.422 I/bluetooth( 4653): [bta_jv_act.cc(841)] bta_jv_start_discovery_cback: Received service 
+discovery callback success bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS
+10-19 01:14:06.422 I/bluetooth( 4653): [bta_jv_act.cc(865)] bta_jv_start_discovery_cback: Issuing service discovery 
+complete callback bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS status:tBTA_JV_STATUS::FAILURE scn:0
+10-19 01:14:06.422 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1138)] jv_dm_cback: handling 
+event:BTA_JV_DISCOVERY_COMP_EVT, slot_id:48
+10-19 01:14:06.422 E/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1270)] handle_discovery_comp: SDP service 
+discovery completed for slot_id: 48 with the result status: tBTA_JV_STATUS::FAILURE, scn: 0
+10-19 01:14:06.422 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(660)] cleanup_rfc_slot: cleanup_rfc_slot: 
+slot->fd= 356, slot->app_fd= -1, slot->rfc_handle= 0, slot->id= 48
+10-19 01:14:06.422 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(664)] cleanup_rfc_slot: disconnected from RFCOMM 
+socket connections for device: xx:xx:xx:xx:68:1c, scn: -1, app_uid: 10113, slot_id: 48, socket_id: 0
+10-19 01:14:06.422 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.422 W/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1410)] btsock_rfc_signaled_flagged: RFCOMM 
+slot_id 48 not found.
+10-19 01:14:06.423 I/flutter (26642): [BT] Gagal terhubung ke E4:5F:01:32:68:1C: PlatformException(connect_error, 
+read failed, socket might closed or timeout, read ret: -1, java.io.IOException: read failed, socket might closed or 
+timeout, read ret: -1
+10-19 01:14:06.423 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readAll(BluetoothSocket.java:1519)
+10-19 01:14:06.423 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readInt(BluetoothSocket.java:1537)
+10-19 01:14:06.423 I/flutter (26642):   at android.bluetooth.BluetoothSocket.connect(BluetoothSocket.java:738)
+10-19 01:14:06.423 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:57)
+10-19 01:14:06.423 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:64)
+10-19 01:14:06.423 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.lambda$onMethodCall$4(FlutterBluetoothSerialPlugin.java:1007)
+10-19 01:14:06.423 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.$r8$lambda$U3e35LWJSZrpW-jeI3rqoMDHwZY(FlutterBluetoothSerialPlugin.java:0)
+10-19 01:14:06.423 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-19 01:14:06.423 I/flutter (26642):   at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:308)
+10-19 01:14:06.423 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-19 01:14:06.423 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-19 01:14:06.423 I/flutter (26642):   at java.lang.Thread.run(Thread.java:1571)
+10-19 01:14:06.423 I/flutter (26642): , null)
+10-19 01:14:06.458 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:06.481 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:06.481 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:06.481 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-56, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:06.482 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:06.482 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:06.482 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:06.482 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:06.487 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96096452, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.488 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96096452, downTime=96096350, phoneEventTime=1792347246485 } moveCount:0
+10-19 01:14:06.544 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96096509, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.546 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96096509, downTime=96096509, phoneEventTime=1792347246543 } moveCount:0
+10-19 01:14:06.585 I/BufferQueueProducer( 1167): [d1c3009 SurfaceView[com.vioscan.vioscan_flutter/com.vioscan.viosca
+n_flutter.MainActivity](BLAST)#55798](this:0xb400007c3a68f0b0,id:-1,api:0,p:-1,c:1167) queueBuffer: fps=98.48 
+dur=1005.30 max=41.77 min=7.92
+10-19 01:14:06.642 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96096608, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.643 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96096608, downTime=96096509, phoneEventTime=1792347246642 } moveCount:0
+10-19 01:14:06.648 D/FlutterBluePlugin(26642): Connecting to E4:5F:01:32:68:1C (id: 24)
+10-19 01:14:06.655 D/BluetoothAdapterService( 4653): cancelDiscovery
+10-19 01:14:06.655 I/bt_btif_dm( 4653): [btif_dm.cc(3082)] btif_dm_cancel_discovery: Cancel search
+10-19 01:14:06.655 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.655 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(1180)] bta_dm_search_sm_execute: 
+state:BTA_DM_SEARCH_IDLE, event:BTA_DM_API_SEARCH_CANCEL_EVT[0x1]
+10-19 01:14:06.655 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.655 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.655 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.664 I/bt_btif_sock( 4653): [btif_sock.cc(231)] btsock_connect: Attempting socket connection for 
+device: xx:xx:xx:xx:68:1c, type: 1, channel: -1, app_uid: 10113, data_path: 0, hub_id: 0, endpoint_id: 0, 
+max_rx_packet_size: 0
+10-19 01:14:06.664 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(497)] btsock_rfc_connect: btsock_rfc_connect: 
+channel= -1, flags= 3, app_uid= 10113
+10-19 01:14:06.664 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(546)] btsock_rfc_connect: 
+service_uuid:00001101-0000-1000-8000-00805f9b34fb, bd_addr:xx:xx:xx:xx:68:1c, slot_id:49
+10-19 01:14:06.664 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(550)] btsock_rfc_connect: 
+is_support_skip_rfcomm_auth:false
+10-19 01:14:06.661 W//system/bin/init(    1): type=1107 audit(0.0:147641): uid=0 auid=4294967295 ses=4294967295 
+subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.service.bt.echo_support pid=4653 uid=1002 
+gid=1002 scontext=u:r:bluetooth:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-19 01:14:06.668 W/libc    ( 4653): Unable to set property "persist.vendor.service.bt.echo_support" to "false": 
+PROP_ERROR_PERMISSION_DENIED (0x18)
+10-19 01:14:06.669 E/bluetooth( 4653): [system_properties.cc(46)] SetSystemProperty: Set property 
+persist.vendor.service.bt.echo_support failed with error code -1
+10-19 01:14:06.669 I/bluetooth( 4653): [bta_jv_act.cc(962)] bta_jv_start_discovery: Started service discovery 
+bd_addr:xx:xx:xx:xx:68:1c num_uuid:1 rfcomm_slot_id:49
+10-19 01:14:06.670 I/BluetoothSocket(26642): connect(), SocketState: INIT, mPfd: {ParcelFileDescriptor: 
+java.io.FileDescriptor@5a5a630}
+10-19 01:14:06.671 D/BluetoothSocket(26642): mRstricteState = false
+10-19 01:14:06.688 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:06.689 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.708 I/bluetooth( 4653): [bta_jv_act.cc(841)] bta_jv_start_discovery_cback: Received service 
+discovery callback success bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS
+10-19 01:14:06.708 I/bluetooth( 4653): [bta_jv_act.cc(865)] bta_jv_start_discovery_cback: Issuing service discovery 
+complete callback bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS status:tBTA_JV_STATUS::FAILURE scn:0
+10-19 01:14:06.708 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1138)] jv_dm_cback: handling 
+event:BTA_JV_DISCOVERY_COMP_EVT, slot_id:49
+10-19 01:14:06.708 E/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1270)] handle_discovery_comp: SDP service 
+discovery completed for slot_id: 49 with the result status: tBTA_JV_STATUS::FAILURE, scn: 0
+10-19 01:14:06.708 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(660)] cleanup_rfc_slot: cleanup_rfc_slot: 
+slot->fd= 356, slot->app_fd= -1, slot->rfc_handle= 0, slot->id= 49
+10-19 01:14:06.709 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(664)] cleanup_rfc_slot: disconnected from RFCOMM 
+socket connections for device: xx:xx:xx:xx:68:1c, scn: -1, app_uid: 10113, slot_id: 49, socket_id: 0
+10-19 01:14:06.709 W/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1410)] btsock_rfc_signaled_flagged: RFCOMM 
+slot_id 49 not found.
+10-19 01:14:06.709 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.712 I/flutter (26642): [BT] Gagal terhubung ke E4:5F:01:32:68:1C: PlatformException(connect_error, 
+read failed, socket might closed or timeout, read ret: -1, java.io.IOException: read failed, socket might closed or 
+timeout, read ret: -1
+10-19 01:14:06.712 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readAll(BluetoothSocket.java:1519)
+10-19 01:14:06.712 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readInt(BluetoothSocket.java:1537)
+10-19 01:14:06.712 I/flutter (26642):   at android.bluetooth.BluetoothSocket.connect(BluetoothSocket.java:738)
+10-19 01:14:06.712 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:57)
+10-19 01:14:06.712 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:64)
+10-19 01:14:06.712 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.lambda$onMethodCall$4(FlutterBluetoothSerialPlugin.java:1007)
+10-19 01:14:06.712 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.$r8$lambda$U3e35LWJSZrpW-jeI3rqoMDHwZY(FlutterBluetoothSerialPlugin.java:0)
+10-19 01:14:06.712 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-19 01:14:06.712 I/flutter (26642):   at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:308)
+10-19 01:14:06.712 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-19 01:14:06.712 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-19 01:14:06.712 I/flutter (26642):   at java.lang.Thread.run(Thread.java:1571)
+10-19 01:14:06.712 I/flutter (26642): , null)
+10-19 01:14:06.723 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96096688, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.736 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96096688, downTime=96096688, phoneEventTime=1792347246722 } moveCount:0
+10-19 01:14:06.814 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96096779, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.820 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96096779, downTime=96096688, phoneEventTime=1792347246813 } moveCount:0
+10-19 01:14:06.853 D/FlutterBluePlugin(26642): Connecting to E4:5F:01:32:68:1C (id: 25)
+10-19 01:14:06.856 D/BluetoothAdapterService( 4653): cancelDiscovery
+10-19 01:14:06.856 I/bt_btif_dm( 4653): [btif_dm.cc(3082)] btif_dm_cancel_discovery: Cancel search
+10-19 01:14:06.856 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.856 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(1180)] bta_dm_search_sm_execute: 
+state:BTA_DM_SEARCH_IDLE, event:BTA_DM_API_SEARCH_CANCEL_EVT[0x1]
+10-19 01:14:06.856 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.856 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.856 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:06.861 I/bt_btif_sock( 4653): [btif_sock.cc(231)] btsock_connect: Attempting socket connection for 
+device: xx:xx:xx:xx:68:1c, type: 1, channel: -1, app_uid: 10113, data_path: 0, hub_id: 0, endpoint_id: 0, 
+max_rx_packet_size: 0
+10-19 01:14:06.861 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(497)] btsock_rfc_connect: btsock_rfc_connect: 
+channel= -1, flags= 3, app_uid= 10113
+10-19 01:14:06.861 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(546)] btsock_rfc_connect: 
+service_uuid:00001101-0000-1000-8000-00805f9b34fb, bd_addr:xx:xx:xx:xx:68:1c, slot_id:50
+10-19 01:14:06.861 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(550)] btsock_rfc_connect: 
+is_support_skip_rfcomm_auth:false
+10-19 01:14:06.862 W/libc    ( 4653): Unable to set property "persist.vendor.service.bt.echo_support" to "false": 
+PROP_ERROR_PERMISSION_DENIED (0x18)
+10-19 01:14:06.857 W//system/bin/init(    1): type=1107 audit(0.0:147642): uid=0 auid=4294967295 ses=4294967295 
+subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.service.bt.echo_support pid=4653 uid=1002 
+gid=1002 scontext=u:r:bluetooth:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-19 01:14:06.862 I/BluetoothSocket(26642): connect(), SocketState: INIT, mPfd: {ParcelFileDescriptor: 
+java.io.FileDescriptor@9de7cf}
+10-19 01:14:06.862 I/bluetooth( 4653): [bta_jv_act.cc(962)] bta_jv_start_discovery: Started service discovery 
+bd_addr:xx:xx:xx:xx:68:1c num_uuid:1 rfcomm_slot_id:50
+10-19 01:14:06.862 D/BluetoothSocket(26642): mRstricteState = false
+10-19 01:14:06.883 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96096847, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.886 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96096847, downTime=96096847, phoneEventTime=1792347246881 } moveCount:0
+10-19 01:14:06.894 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:06.904 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.920 I/bluetooth( 4653): [bta_jv_act.cc(841)] bta_jv_start_discovery_cback: Received service 
+discovery callback success bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS
+10-19 01:14:06.920 I/bluetooth( 4653): [bta_jv_act.cc(865)] bta_jv_start_discovery_cback: Issuing service discovery 
+complete callback bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS status:tBTA_JV_STATUS::FAILURE scn:0
+10-19 01:14:06.920 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1138)] jv_dm_cback: handling 
+event:BTA_JV_DISCOVERY_COMP_EVT, slot_id:50
+10-19 01:14:06.920 E/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1270)] handle_discovery_comp: SDP service 
+discovery completed for slot_id: 50 with the result status: tBTA_JV_STATUS::FAILURE, scn: 0
+10-19 01:14:06.920 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(660)] cleanup_rfc_slot: cleanup_rfc_slot: 
+slot->fd= 356, slot->app_fd= -1, slot->rfc_handle= 0, slot->id= 50
+10-19 01:14:06.920 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(664)] cleanup_rfc_slot: disconnected from RFCOMM 
+socket connections for device: xx:xx:xx:xx:68:1c, scn: -1, app_uid: 10113, slot_id: 50, socket_id: 0
+10-19 01:14:06.920 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:06.920 W/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1410)] btsock_rfc_signaled_flagged: RFCOMM 
+slot_id 50 not found.
+10-19 01:14:06.921 I/flutter (26642): [BT] Gagal terhubung ke E4:5F:01:32:68:1C: PlatformException(connect_error, 
+read failed, socket might closed or timeout, read ret: -1, java.io.IOException: read failed, socket might closed or 
+timeout, read ret: -1
+10-19 01:14:06.922 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readAll(BluetoothSocket.java:1519)
+10-19 01:14:06.922 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readInt(BluetoothSocket.java:1537)
+10-19 01:14:06.922 I/flutter (26642):   at android.bluetooth.BluetoothSocket.connect(BluetoothSocket.java:738)
+10-19 01:14:06.922 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:57)
+10-19 01:14:06.922 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:64)
+10-19 01:14:06.922 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.lambda$onMethodCall$4(FlutterBluetoothSerialPlugin.java:1007)
+10-19 01:14:06.922 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.$r8$lambda$U3e35LWJSZrpW-jeI3rqoMDHwZY(FlutterBluetoothSerialPlugin.java:0)
+10-19 01:14:06.922 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-19 01:14:06.922 I/flutter (26642):   at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:308)
+10-19 01:14:06.922 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-19 01:14:06.922 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-19 01:14:06.922 I/flutter (26642):   at java.lang.Thread.run(Thread.java:1571)
+10-19 01:14:06.922 I/flutter (26642): , null)
+10-19 01:14:06.977 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96096942, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:06.977 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96096942, downTime=96096847, phoneEventTime=1792347246975 } moveCount:0
+10-19 01:14:07.050 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96097015, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:07.050 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96097015, downTime=96097015, phoneEventTime=1792347247048 } moveCount:0
+10-19 01:14:07.109 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:07.141 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96097106, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:07.141 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96097106, downTime=96097015, phoneEventTime=1792347247140 } moveCount:0
+10-19 01:14:07.145 D/FlutterBluePlugin(26642): Connecting to E4:5F:01:32:68:1C (id: 26)
+10-19 01:14:07.149 D/BluetoothAdapterService( 4653): cancelDiscovery
+10-19 01:14:07.149 I/bt_btif_dm( 4653): [btif_dm.cc(3082)] btif_dm_cancel_discovery: Cancel search
+10-19 01:14:07.149 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.149 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(1180)] bta_dm_search_sm_execute: 
+state:BTA_DM_SEARCH_IDLE, event:BTA_DM_API_SEARCH_CANCEL_EVT[0x1]
+10-19 01:14:07.149 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.149 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.149 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.163 I/bt_btif_sock( 4653): [btif_sock.cc(231)] btsock_connect: Attempting socket connection for 
+device: xx:xx:xx:xx:68:1c, type: 1, channel: -1, app_uid: 10113, data_path: 0, hub_id: 0, endpoint_id: 0, 
+max_rx_packet_size: 0
+10-19 01:14:07.164 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(497)] btsock_rfc_connect: btsock_rfc_connect: 
+channel= -1, flags= 3, app_uid= 10113
+10-19 01:14:07.164 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(546)] btsock_rfc_connect: 
+service_uuid:00001101-0000-1000-8000-00805f9b34fb, bd_addr:xx:xx:xx:xx:68:1c, slot_id:51
+10-19 01:14:07.164 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(550)] btsock_rfc_connect: 
+is_support_skip_rfcomm_auth:false
+10-19 01:14:07.161 W//system/bin/init(    1): type=1107 audit(0.0:147643): uid=0 auid=4294967295 ses=4294967295 
+subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.service.bt.echo_support pid=4653 uid=1002 
+gid=1002 scontext=u:r:bluetooth:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-19 01:14:07.169 W/libc    ( 4653): Unable to set property "persist.vendor.service.bt.echo_support" to "false": 
+PROP_ERROR_PERMISSION_DENIED (0x18)
+10-19 01:14:07.169 E/bluetooth( 4653): [system_properties.cc(46)] SetSystemProperty: Set property 
+persist.vendor.service.bt.echo_support failed with error code -1
+10-19 01:14:07.170 I/bluetooth( 4653): [bta_jv_act.cc(962)] bta_jv_start_discovery: Started service discovery 
+bd_addr:xx:xx:xx:xx:68:1c num_uuid:1 rfcomm_slot_id:51
+10-19 01:14:07.170 I/BluetoothSocket(26642): connect(), SocketState: INIT, mPfd: {ParcelFileDescriptor: 
+java.io.FileDescriptor@cf8113a}
+10-19 01:14:07.170 D/BluetoothSocket(26642): mRstricteState = false
+10-19 01:14:07.184 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:07.200 I/bluetooth( 4653): [bta_jv_act.cc(841)] bta_jv_start_discovery_cback: Received service 
+discovery callback success bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS
+10-19 01:14:07.200 I/bluetooth( 4653): [bta_jv_act.cc(865)] bta_jv_start_discovery_cback: Issuing service discovery 
+complete callback bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS status:tBTA_JV_STATUS::FAILURE scn:0
+10-19 01:14:07.200 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1138)] jv_dm_cback: handling 
+event:BTA_JV_DISCOVERY_COMP_EVT, slot_id:51
+10-19 01:14:07.200 E/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1270)] handle_discovery_comp: SDP service 
+discovery completed for slot_id: 51 with the result status: tBTA_JV_STATUS::FAILURE, scn: 0
+10-19 01:14:07.200 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(660)] cleanup_rfc_slot: cleanup_rfc_slot: 
+slot->fd= 356, slot->app_fd= -1, slot->rfc_handle= 0, slot->id= 51
+10-19 01:14:07.200 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(664)] cleanup_rfc_slot: disconnected from RFCOMM 
+socket connections for device: xx:xx:xx:xx:68:1c, scn: -1, app_uid: 10113, slot_id: 51, socket_id: 0
+10-19 01:14:07.200 W/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1410)] btsock_rfc_signaled_flagged: RFCOMM 
+slot_id 51 not found.
+10-19 01:14:07.200 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:07.203 I/flutter (26642): [BT] Gagal terhubung ke E4:5F:01:32:68:1C: PlatformException(connect_error, 
+read failed, socket might closed or timeout, read ret: -1, java.io.IOException: read failed, socket might closed or 
+timeout, read ret: -1
+10-19 01:14:07.204 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readAll(BluetoothSocket.java:1519)
+10-19 01:14:07.204 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readInt(BluetoothSocket.java:1537)
+10-19 01:14:07.204 I/flutter (26642):   at android.bluetooth.BluetoothSocket.connect(BluetoothSocket.java:738)
+10-19 01:14:07.204 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:57)
+10-19 01:14:07.204 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:64)
+10-19 01:14:07.204 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.lambda$onMethodCall$4(FlutterBluetoothSerialPlugin.java:1007)
+10-19 01:14:07.204 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.$r8$lambda$U3e35LWJSZrpW-jeI3rqoMDHwZY(FlutterBluetoothSerialPlugin.java:0)
+10-19 01:14:07.204 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-19 01:14:07.204 I/flutter (26642):   at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:308)
+10-19 01:14:07.204 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-19 01:14:07.204 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-19 01:14:07.204 I/flutter (26642):   at java.lang.Thread.run(Thread.java:1571)
+10-19 01:14:07.204 I/flutter (26642): , null)
+10-19 01:14:07.205 I/MIUIInput( 1826): [MotionEvent] publisher action=0x0, deviceId=4, 96097170, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:07.232 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_DOWN, id[0]=0, 
+pointerCount=1, eventTime=96097170, downTime=96097170, phoneEventTime=1792347247203 } moveCount:0
+10-19 01:14:07.259 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:07.259 W/BluetoothMetricsLogger( 4653): MetricsLogger isn't initialized
+10-19 01:14:07.259 V/BtGatt.ScanController( 4653): onScanResult() - eventType=0x1, addressType=1, 
+address=XX:XX:XX:XX:37:5B, primaryPhy=1, secondaryPhy=1, advertisingSid=0x2, txPower=127, rssi=-67, 
+periodicAdvInt=0x0, originalAddress=00:00:00:00:00:00
+10-19 01:14:07.259 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:07.259 V/BtGatt.ScanController( 4653): Skipping client: permission=true matches=false
+10-19 01:14:07.259 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:07.259 V/BtGatt.ScanController( 4653): Legacy scan, non legacy result; skip.
+10-19 01:14:07.316 I/MIUIInput( 1826): [MotionEvent] publisher action=0x1, deviceId=4, 96097282, channel '174f752 
+com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity'
+10-19 01:14:07.317 W/libc    ( 1167): Access denied finding property "ro.vendor.display.max_hdr_luminance"
+10-19 01:14:07.318 I/MIUIInput(26642): [MotionEvent] ViewRootImpl windowName 
+'com.vioscan.vioscan_flutter/com.vioscan.vioscan_flutter.MainActivity', { action=ACTION_UP, id[0]=0, 
+pointerCount=1, eventTime=96097282, downTime=96097170, phoneEventTime=1792347247315 } moveCount:0
+10-19 01:14:07.349 D/FlutterBluePlugin(26642): Connecting to E4:5F:01:32:68:1C (id: 27)
+10-19 01:14:07.360 D/BluetoothAdapterService( 4653): cancelDiscovery
+10-19 01:14:07.360 I/bt_btif_dm( 4653): [btif_dm.cc(3082)] btif_dm_cancel_discovery: Cancel search
+10-19 01:14:07.360 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.361 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(1180)] bta_dm_search_sm_execute: 
+state:BTA_DM_SEARCH_IDLE, event:BTA_DM_API_SEARCH_CANCEL_EVT[0x1]
+10-19 01:14:07.361 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.361 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.361 I/bt_bta_sd( 4653): [bta_dm_device_search.cc(97)] bta_dm_search_get_state: search_state=0
+10-19 01:14:07.362 I/bt_btif_sock( 4653): [btif_sock.cc(231)] btsock_connect: Attempting socket connection for 
+device: xx:xx:xx:xx:68:1c, type: 1, channel: -1, app_uid: 10113, data_path: 0, hub_id: 0, endpoint_id: 0, 
+max_rx_packet_size: 0
+10-19 01:14:07.362 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(497)] btsock_rfc_connect: btsock_rfc_connect: 
+channel= -1, flags= 3, app_uid= 10113
+10-19 01:14:07.363 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(546)] btsock_rfc_connect: 
+service_uuid:00001101-0000-1000-8000-00805f9b34fb, bd_addr:xx:xx:xx:xx:68:1c, slot_id:52
+10-19 01:14:07.363 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(550)] btsock_rfc_connect: 
+is_support_skip_rfcomm_auth:false
+10-19 01:14:07.363 W/libc    ( 4653): Unable to set property "persist.vendor.service.bt.echo_support" to "false": 
+PROP_ERROR_PERMISSION_DENIED (0x18)
+10-19 01:14:07.363 E/bluetooth( 4653): [system_properties.cc(46)] SetSystemProperty: Set property 
+persist.vendor.service.bt.echo_support failed with error code -1
+10-19 01:14:07.357 W//system/bin/init(    1): type=1107 audit(0.0:147644): uid=0 auid=4294967295 ses=4294967295 
+subj=u:r:init:s0 msg='avc:  denied  { set } for property=persist.vendor.service.bt.echo_support pid=4653 uid=1002 
+gid=1002 scontext=u:r:bluetooth:s0 tcontext=u:object_r:vendor_default_prop:s0 tclass=property_service permissive=0'
+10-19 01:14:07.364 I/bluetooth( 4653): [bta_jv_act.cc(962)] bta_jv_start_discovery: Started service discovery 
+bd_addr:xx:xx:xx:xx:68:1c num_uuid:1 rfcomm_slot_id:52
+10-19 01:14:07.365 I/BluetoothSocket(26642): connect(), SocketState: INIT, mPfd: {ParcelFileDescriptor: 
+java.io.FileDescriptor@860ede1}
+10-19 01:14:07.365 D/BluetoothSocket(26642): mRstricteState = false
+10-19 01:14:07.397 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:07.414 I/bluetooth( 4653): [bta_jv_act.cc(841)] bta_jv_start_discovery_cback: Received service 
+discovery callback success bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS
+10-19 01:14:07.414 I/bluetooth( 4653): [bta_jv_act.cc(865)] bta_jv_start_discovery_cback: Issuing service discovery 
+complete callback bd_addr:xx:xx:xx:xx:68:1c result:tSDP_STATUS::SDP_SUCCESS status:tBTA_JV_STATUS::FAILURE scn:0
+10-19 01:14:07.414 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1138)] jv_dm_cback: handling 
+event:BTA_JV_DISCOVERY_COMP_EVT, slot_id:52
+10-19 01:14:07.414 E/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1270)] handle_discovery_comp: SDP service 
+discovery completed for slot_id: 52 with the result status: tBTA_JV_STATUS::FAILURE, scn: 0
+10-19 01:14:07.414 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(660)] cleanup_rfc_slot: cleanup_rfc_slot: 
+slot->fd= 356, slot->app_fd= -1, slot->rfc_handle= 0, slot->id= 52
+10-19 01:14:07.414 I/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(664)] cleanup_rfc_slot: disconnected from RFCOMM 
+socket connections for device: xx:xx:xx:xx:68:1c, scn: -1, app_uid: 10113, slot_id: 52, socket_id: 0
+10-19 01:14:07.415 W/bt_btif_sock_rfcomm( 4653): [btif_sock_rfc.cc(1410)] btsock_rfc_signaled_flagged: RFCOMM 
+slot_id 52 not found.
+10-19 01:14:07.415 I/bluetooth( 4653): interop_iotlist_query_ EntryMtkL2capReduceQuota[0x131 Manufacturer_Based ] 
+getresult 1
+10-19 01:14:07.417 I/flutter (26642): [BT] Gagal terhubung ke E4:5F:01:32:68:1C: PlatformException(connect_error, 
+read failed, socket might closed or timeout, read ret: -1, java.io.IOException: read failed, socket might closed or 
+timeout, read ret: -1
+10-19 01:14:07.417 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readAll(BluetoothSocket.java:1519)
+10-19 01:14:07.417 I/flutter (26642):   at android.bluetooth.BluetoothSocket.readInt(BluetoothSocket.java:1537)
+10-19 01:14:07.417 I/flutter (26642):   at android.bluetooth.BluetoothSocket.connect(BluetoothSocket.java:738)
+10-19 01:14:07.417 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:57)
+10-19 01:14:07.417 I/flutter (26642):   at 
+io.github.edufolly.flutterbluetoothserial.BluetoothConnection.connect(BluetoothConnection.java:64)
+10-19 01:14:07.417 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.lambda$onMethodCall$4(FlutterBluetoothSerialPlugin.java:1007)
+10-19 01:14:07.417 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler.$r8$lambda$U3e35LWJSZrpW-jeI3rqoMDHwZY(FlutterBluetoothSerialPlugin.java:0)
+10-19 01:14:07.417 I/flutter (26642):   at io.github.edufolly.flutterbluetoothserial.FlutterBluetoothSerialPlugin$Flu
+tterBluetoothSerialMethodCallHandler$$ExternalSyntheticLambda5.run(D8$$SyntheticClass:0)
+10-19 01:14:07.417 I/flutter (26642):   at android.os.AsyncTask$SerialExecutor$1.run(AsyncTask.java:308)
+10-19 01:14:07.417 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1100)
+10-19 01:14:07.417 I/flutter (26642):   at 
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+10-19 01:14:07.417 I/flutter (26642):   at java.lang.Thread.run(Thread.java:1571)
+10-19 01:14:07.417 I/flutter (26642): , null)
+
+
+PS D:\New folder (2)\punyaqila> 
